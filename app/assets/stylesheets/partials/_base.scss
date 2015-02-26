@@ -1,0 +1,5 @@
+.inner { 
+	@include outer-container; 
+	@include padding(unpack(60px 15px));
+	text-align: center;
+}

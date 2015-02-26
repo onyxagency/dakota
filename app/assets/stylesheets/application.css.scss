@@ -10,6 +10,23 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ 
  *= require_self
+ *= require normalize-rails
+
  */
+
+@import "bourbon";
+@import "partials/variables";
+@import "neat";
+@import "partials/typography";
+@import "partials/mixins";
+
+@import "partials/base";
+
+// Media Queries
+@import "partials/mobile";
+@import "partials/largemobile";
+@import "partials/tablet";
+@import "partials/desktop";
+@import "partials/largedesktop";

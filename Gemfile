@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # sass library / grid 
+gem 'normalize-rails'
 gem 'bourbon'
 gem 'neat'
 
