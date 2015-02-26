@@ -110,6 +110,7 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pg (0.18.1)
     polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -197,6 +198,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   neat
+  pg
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

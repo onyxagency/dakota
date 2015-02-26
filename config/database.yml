@@ -1,0 +1,18 @@
+development:
+ adapter: postgresql
+ encoding: unicode
+ database: dakota_dev
+ host: localhost
+ pool: 5
+ username: dakota
+ password: password
+
+staging:
+ adapter: postgresql
+ encoding: unicode
+ database: dakota_staging
+
+production:
+ adapter: postgresql
+ encoding: unicode
+ database: dakota_production
