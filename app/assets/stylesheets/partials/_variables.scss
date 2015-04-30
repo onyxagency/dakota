@@ -1,12 +1,13 @@
 @import "neat-helpers";
 
-$grid-columns: 6;
+$grid-columns: 12;
 
 $mobile-size:				em(415);
 $largemobile-size:	em(600);
 $tablet-size:				em(1024);
 $desktop-size:			em(1300);
 $largedesktop-size:	em(1600);
+$tall-size:					em(783);
 
 // Bourbon Neat Breakpoints
 $mobile: new-breakpoint(min-width $mobile-size 12);
@@ -14,8 +15,14 @@ $largemobile: new-breakpoint(min-width $largemobile-size 12);
 $tablet: new-breakpoint(min-width $tablet-size 12);
 $desktop: new-breakpoint(min-width $desktop-size 12);
 $largedesktop: new-breakpoint(min-width $largedesktop-size 12);
+$tall: new-breakpoint(min-height $tall-size 12);
 
 
 // Colors
-$primary-color: 			#fff;
-$base-color:					#1e1e1e;
+$base-color:						#444444;
+$title-color:						#fff;
+$base-bg-color:					#fff;
+$alt-bg-color:					#F7F7F7;
+$input-bg-color:				#F3F3F3;
+$accent-bg-color:				#3B94CC;
+$dark-accent-bg-color: 	#348AC0;

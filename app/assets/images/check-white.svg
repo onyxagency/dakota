@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Marketing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g sketch:type="MSArtboardGroup" transform="translate(-852.000000, -5468.000000)" id="BLOCK---7" fill="#F7F7F7">
+            <g sketch:type="MSLayerGroup" transform="translate(1.000000, 5022.000000)">
+                <g id="CHECKS" transform="translate(851.000000, 446.000000)" sketch:type="MSShapeGroup">
+                    <path d="M4.09462054,11 C3.73592154,11 3.39667405,10.8400275 3.17858638,10.5656541 L0.233001639,6.85752822 C-0.150094166,6.37525342 -0.0503639759,5.68853434 0.45554008,5.32317465 C0.962268352,4.95765781 1.682139,5.05335848 2.06539965,5.53531899 L4.00263799,7.97387887 L8.87524078,0.516141085 C9.21069688,0.00306607422 9.91902849,-0.153920736 10.4583957,0.165395779 C10.9971036,0.485026582 11.1616172,1.16074559 10.8259963,1.67429203 L5.07032797,10.4837821 C4.87037306,10.7900557 4.52519121,10.9827142 4.14720555,10.9990571 C4.12940248,10.9996857 4.11209393,11 4.09462054,11 L4.09462054,11 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

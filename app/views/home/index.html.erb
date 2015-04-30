@@ -1,6 +1,83 @@
-<section>
+<section class="screen1">
+	<div class="section-wrapper">
+		<div class="header">
+			<div class="inner">
+				<img src="<%= asset_path 'dakota-logo.svg' %>" alt="Dakota">
+				<h1>Dakota seamlessly connects people with tech professionals for real-time support.</h1>
+			</div>
+		</div>
+		<div class="appImg"></div>
+	</div>
+</section>
+
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<section class="screen2 swiper-slide">
+			<div class="section-wrapper">
+				<div class="section-title">
+					<div class="inner">
+						<h2>Get your computer fixed within minutes, not days.</h2>
+					</div>
+				</div>
+				<div class="appImg"></div>
+				<div class="section-subtitle">
+					<div class="inner">
+						<p>Just tell us what your problem is and we’ll do the rest.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="screen3 swiper-slide">
+			<div class="section-wrapper">
+				<div class="section-title">
+					<div class="inner">
+						<h2>We’ll match you with an available tech in real-time.</h2>
+					</div>
+				</div>
+				<div class="appImg"></div>
+				<div class="section-subtitle">
+					<div class="inner">
+						<p>Let us do the work for you while you sit back and relax. That means no more lugging your computer to a shop or searching for an IT guy.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+
+<section class="users">
 	<div class="inner">
-		<h1>Dakota</h1>
-		<p>beep boop</p>
+		<h2>Users</h2>
+		<img src="<%= asset_path 'user-icon.svg' %>" alt="User Computer">
+		<ul>
+			<li><strong>Always Available.</strong> 24/7.</li>
+			<li><strong>Save Money.</strong> Customers on Dakota save on average $100 over traditional computer support outlets.</li>
+			<li><strong>Easy.</strong> No appointments to schedule, no labor. Reduce headaches by getting your issue fixed in minutes.</li>
+		</ul>
+	</div>
+</section>
+<section class="techs">
+	<div class="inner">
+		<h2>Techs</h2>
+		<img src="<%= asset_path 'tech-icon.svg' %>" alt="Tech Computer">
+		<ul>
+			<li><strong>Make Money.</strong> Get paid for your time. Invoice-free.</li>
+			<li><strong>On-Demand Work.</strong> Login to Dakota whenever you want, and we'll handle finding you the jobs.</li>
+			<li><strong>Beautiful Interface.</strong> Dakota makes accepting jobs easy, review a request in your dashboard, and click to accept.</li>
+		</ul>
+	</div>
+</section>
+<section class="request">
+	<div class="inner">
+		<h2>Get early access to Dakota.</h2>
+		<p><span>3,456</span> people have signed up.</p>
+		<form action="">
+			<input type="text" placeholder="Enter your email address">
+			<div class="field-wrap">
+				<input id="isTech" type="checkbox" name="isTech" value="false">
+				<label for="isTech"><span></span>I'm a tech</label>
+			</div>
+			<a class="request" href="#">Request an invite</a>
+		</form>
 	</div>
 </section>
