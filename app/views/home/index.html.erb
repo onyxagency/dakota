@@ -1,4 +1,4 @@
-<section class="screen1">
+<section class="intro">
 	<div class="section-wrapper">
 		<div class="header">
 			<div class="inner">
@@ -12,17 +12,34 @@
 
 <div class="swiper-container">
 	<div class="swiper-wrapper">
+		<section class="screen1 swiper-slide">
+			<div class="section-wrapper">
+				<div class="section-title">
+					<div class="inner">
+						<h2 class="animated fadeable">Get your computer fixed within minutes, not days.</h2>
+					</div>
+				</div>
+				<div class="appImg">
+					<img src="<%= asset_path 'screen-1-callout.png' %>" alt="I can't access websites" class="screen-1-callout callout animated">
+				</div>
+				<div class="section-subtitle">
+					<div class="inner">
+						<p class="animated fadeable">Just tell us what your problem is and we’ll do the rest.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="screen2 swiper-slide">
 			<div class="section-wrapper">
 				<div class="section-title">
 					<div class="inner">
-						<h2>Get your computer fixed within minutes, not days.</h2>
+						<h2 class="animated fadeable">We’ll match you with an available tech in real-time.</h2>
 					</div>
 				</div>
 				<div class="appImg"></div>
 				<div class="section-subtitle">
 					<div class="inner">
-						<p>Just tell us what your problem is and we’ll do the rest.</p>
+						<p class="animated fadeable">Let us do the work for you while you sit back and relax. That means no more lugging your computer to a shop or searching for an IT guy.</p>
 					</div>
 				</div>
 			</div>
@@ -31,18 +48,70 @@
 			<div class="section-wrapper">
 				<div class="section-title">
 					<div class="inner">
-						<h2>We’ll match you with an available tech in real-time.</h2>
+						<h2 class="animated fadeable">Once matched, you’ll begin a live session with a real tech.</h2>
+					</div>
+				</div>
+				<div class="appImg">
+					<img src="<%= asset_path 'screen-3-callout.png' %>" alt="Tech User Zoom" class="screen-3-callout callout animated">
+				</div>
+				<div class="section-subtitle">
+					<div class="inner">
+						<p class="animated fadeable">Our vetting process ensures that we connect you with the best experts to help you. See your tech’s occupation, location, completed jobs, and rating.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="screen4 swiper-slide">
+			<div class="section-wrapper">
+				<div class="section-title">
+					<div class="inner">
+						<h2 class="animated fadeable">Talk directly with your tech and get your issue solved.</h2>
+					</div>
+				</div>
+				<div class="appImg">
+					<img src="<%= asset_path 'screen-4-callout.png' %>" alt="Chat Zoom" class="screen-4-callout callout animated">
+				</div>
+				<div class="section-subtitle">
+					<div class="inner">
+						<p class="animated fadeable">Dakota’s safe &amp; secure platform allows the tech to seamlessly fix your issue. You’ll also see exactly how much it costs, so there are no surprises.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="screen5 swiper-slide">
+			<div class="section-wrapper">
+				<div class="section-title">
+					<div class="inner">
+						<h2 class="animated fadeable">Shape a better community by reviewing your experience.</h2>
 					</div>
 				</div>
 				<div class="appImg"></div>
 				<div class="section-subtitle">
 					<div class="inner">
-						<p>Let us do the work for you while you sit back and relax. That means no more lugging your computer to a shop or searching for an IT guy.</p>
+						<p class="animated fadeable">Your reviews matter. We’ll remember your choices and take your feedback to improve the experience each time you use the app.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="screen6 swiper-slide">
+			<div class="section-wrapper">
+				<div class="section-title">
+					<div class="inner">
+						<h2 class="animated fadeable">Dakota is for techs too. Work when you want. Make money.</h2>
+					</div>
+				</div>
+				<div class="appImg">
+					<img src="<%= asset_path 'screen-6-callout.png' %>" alt="Tech Zoom" class="screen-6-callout callout animated">
+				</div>
+				<div class="section-subtitle">
+					<div class="inner">
+						<p class="animated fadeable">Dakota makes it super easy to select, track, and get paid for your jobs. You’ll never have to look for clients again.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 	</div>
+	<div class="swiper-pagination"></div>
 </div>
 
 <section class="users">
@@ -69,15 +138,29 @@
 </section>
 <section class="request">
 	<div class="inner">
-		<h2>Get early access to Dakota.</h2>
-		<p><span>3,456</span> people have signed up.</p>
-		<form action="">
-			<input type="text" placeholder="Enter your email address">
-			<div class="field-wrap">
-				<input id="isTech" type="checkbox" name="isTech" value="false">
-				<label for="isTech"><span></span>I'm a tech</label>
-			</div>
-			<a class="request" href="#">Request an invite</a>
-		</form>
+		<div class="request-wrapper">
+			<h2>Get early access to Dakota.</h2>
+			<p><span><%= @member_count %></span> people have signed up.</p>
+			<span class="error">error</span>
+			<%= form_tag('/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
+				<%= email_field(:email, :address, {id: "email", placeholder: "Enter your email address"}) %>
+				<div class="field-wrap">
+					<%= check_box_tag "isTech" %>
+					<label for="isTech"><span></span>I'm a tech</label>
+				</div>
+				<%= submit_tag "Request an invite", class: "request" %>
+			<% end %>
+			<!-- <div class="mobile-share">
+				<span>Share</span>
+				<a class="twitter" href="#"><img src="<%= asset_path 'twitter-blue.svg' %>" alt="Share on Twitter"></a>
+				<a class="facebook" href="#"><img src="<%= asset_path 'facebook-blue.svg' %>" alt="Share on Facebook"></a>
+				<a class="email-share" href="#"><img src="<%= asset_path 'email-blue.svg' %>" alt="Share via Email"></a>
+			</div> -->
+		</div>
+		<div class="request-success">
+			<h2>Thanks! We'll be in touch. Help spread the word.</h2>
+			<a class="twitter large" href="https://twitter.com/share?text=Check out Dakota!&url=http://getdakota.com"><img src="<%= asset_path 'twitter.svg' %>" alt="Share on Twitter">Share on Twitter</a>
+			<a class="facebook large" href="#"><img src="<%= asset_path 'facebook.svg' %>" alt="Post on Facebook">Post on Facebook</a>
+		</div>
 	</div>
 </section>

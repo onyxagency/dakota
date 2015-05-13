@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  #protect_from_forgery with: :exception
+  before_action :setup_mcapi
+
+  def setup_mcapi
+  	@mc = Gibbon::API.new('8329f71cb8e3fd9670024307a726b536-us10')
+  	@list_id = "3a1e8b156f"
+  end
 end

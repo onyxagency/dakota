@@ -8,31 +8,95 @@ var $introImg,
 
 $(function(){
 
-
- var mySwiper = new Swiper ('.swiper-container');
+	// mobile slider
+	var mySwiper = new Swiper ('.swiper-container', {
+		pagination: $('.swiper-pagination'),
+		paginationClickable: true,
+		onTransitionStart: function(swiper) {
+			$('.swiper-slide-next, .swiper-slide-prev').find('.fadeable').removeClass('fadeIn').addClass('fadeOut');
+			$('.swiper-slide-active').find('.fadeable').removeClass('fadeOut').addClass('fadeIn');
+			$(swiper.slides).each(function(){
+				if ($(this).hasClass('swiper-slide-active')) {
+					$(this).find('.appImg img').show().addClass('bounceInUp');
+				}
+			});
+		}
+	});
 
 	$window = $(window);
 	winH = $window.height();
 	winW = $window.width();
 	$body = $('body');
-	$introImg = $('.screen1');
+	$introImg = $('.intro');
 	$outroImg = $('.tech');
 
-	if (winW >= 768 && !Modernizr.touch) {
+	$screen1 = $('.screen1');
+
+	//if (winW >= 768 && !Modernizr.touch) {
 		
-		$('section').height($(window).height());
-		console.log("in");
+		//$('section').height($(window).height());
+
 		init();
 
-	}
+	//}
 
+	// request an invite form submit
+	var divError = $('span.error'),
+			button   = $('input.request');
+	
+	$('form#subscribe').submit(function(){
+		$(this).unbind('submit')
+			.bind("ajax:beforeSend", function(evt, xhr, settings){
+				button.data('origText', button.val());
+				button.val('Requesting...');
+			})
+			.bind("ajax:success", function(evt, data, status, xhr){
+				if (data.message == "success"){
+					$('.request-wrapper').fadeOut(500);
+					$('.request-success').delay(500).fadeIn(1000);
+				} else {
+					divError.html(data.message).css('visibility', 'visible');
+					button.val(button.data('origText'));
+				}
+			})
+			.bind("ajax:error", function(evt, xhr, status, error){
+				divError.html("Oops, something went wrong. Please reload the page and try again.")
+				button.val(button.data('origText'));
+			});
+	});
 
+	// twitter
+	$('.twitter').on('click', function() {
+		var width  = 660,
+				height = 400,
+				left 	 = ($(window).width() - width) / 2,
+				top    = ($(window).height() - height) / 2,
+				url    = this.href,
+				opts   = 'status=1' +
+								 ',width='  + width  +
+								 ',height=' + height +
+								 ',top='	  + top    +
+								 ',left='   + left;
+
+		window.open(url, 'twitter', opts);
+
+		return false;
+	});
+
+	// facebook
+	$('.facebook').on('click', function(){
+		FB.ui({
+		  method: 'share',
+		  href: 'http://onyxla.co/thoughts/why-i-left', //TODO: change to getdakota.com and add open graph tags
+		}, function(response){});
+	});
+	
 
 });
 
 function init() {
 
-	topOffs();
+	//topOffs();
 
 	$window.scroll(function(){
 		handleScroll();
@@ -40,7 +104,7 @@ function init() {
 
 	$window.resize(function(){
 		//$('section').height($(window).height());
-		topOffs();
+		//topOffs();
 	});
 
 }
@@ -50,6 +114,16 @@ function handleScroll() {
 	
 	scrolledWin = getPageScroll();
 	$body.addClass('scrolling');	
+
+	var screen2Waypoint = new Waypoint({
+		element: $screen1,
+		offset: 100,
+		handler: function(direction) {
+			$screen1.find('.screen-1-callout').addClass("bounceInUp").show();
+		}
+	});
+
+
 	
 	// show logo
 	// if((scrolledWin * 1.5) > winH) {
@@ -61,17 +135,17 @@ function handleScroll() {
 	// 	$body.addClass('scrolled');
 	// }
 	
-	// app img animation
-	if(topOff >= scrolledWin) {
-		$introImg.removeClass('sticky');
-	} else {
-		$introImg.addClass('sticky');
-	}
-	if(topOff2 >= scrolledWin) {
-		$outroImg.removeClass('sticky');
-	} else {
-		$outroImg.addClass('sticky');
-	}
+	// app img animation - commenting out for now *****
+	// if(topOff >= scrolledWin) {
+	// 	$introImg.removeClass('sticky');
+	// } else {
+	// 	$introImg.addClass('sticky');
+	// }
+	// if(topOff2 >= scrolledWin) {
+	// 	$outroImg.removeClass('sticky');
+	// } else {
+	// 	$outroImg.addClass('sticky');
+	// }
 	
 	// reset navi on top scroll
 	// if(scrolledWin < winH) {

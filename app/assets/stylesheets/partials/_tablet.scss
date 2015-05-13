@@ -1,3 +1,11 @@
 @include media($tablet) {
-
+	section {
+		&.users {
+			width: 50%;
+			float: left;
+		}
+		&.request {
+			clear: both;
+		}
+	}
 }
