@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-MailchimpCount.new(last_run: Time.now, list_count: 367)
+MailchimpCount.create(last_run: Time.now, list_count: 367)
