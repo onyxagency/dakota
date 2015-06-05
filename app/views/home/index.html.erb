@@ -10,6 +10,18 @@
 	</div>
 </section>
 
+<div class="modal">
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-1"></div>
+      <h1>Modal Title</h1>
+      <p class="modal-intro">Intro text lorem ipsum dolor sit ametm, quas, eaque facilis aliquid cupiditate tempora cumque ipsum accusantium illo modi commodi  minima.</p>
+      <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
+    </div>
+  </div>
+</div>
+
 <section class="social" data-anchor-target=".intro" data-0-center-bottom="opacity: 0;" data-0-top-bottom="opacity: 1;">
 	<a class="tech-link" href="#techs">Are you a tech professional?</a>
 	<a class="request-link" href="#request">Request an Invite</a>
@@ -17,7 +29,10 @@
 		<span>Share</span>
 		<a class="twitter" href="https://twitter.com/share?text=Check out Dakota!"><img src="<%= asset_path 'twitter-blue.svg' %>" alt="Share on Twitter"></a>
 		<a class="facebook" href="#"><img src="<%= asset_path 'facebook-blue.svg' %>" alt="Share on Facebook"></a>
-		<a class="email-share" href="#"><img src="<%= asset_path 'email-blue.svg' %>" alt="Share via Email"></a>
+		<!-- <a class="email-share" href="#"><img src="<%= asset_path 'email-blue.svg' %>" alt="Share via Email"></a> -->
+		<label for="modal-1">
+	    <div class="email-share modal-trigger"><img src="<%= asset_path 'email-blue.svg' %>" alt="Share via Email"></div>
+	  </label>
 	</div>
 </section>
 

@@ -1,9 +1,16 @@
 class HomeController < ApplicationController
 
 	def index
-		list = @mc.lists.list({:filters => {:list_name => "Dakota"}})
-		@member_count = list['data'][0]['stats']['member_count'] + 300 #NOTE: Once enough users are signed up, use real member count
-		#TODO: Create table to store member count and last time accessed. Reference: http://www.impressivewebs.com/displaying-mailchimp-subscriber-count-php-mailchimp-api/
+
+		@last_run = MailchimpCount.last
+
+		if Time.now - @last_run.last_run > 10800 #NOTE: Set to 3 hours for now.
+			list = @mc.lists.list({:filters => {:list_name => "Dakota"}})
+			@member_count = list['data'][0]['stats']['member_count'] + 300
+			MailchimpCount.new(:last_run => Time.now, :list_count => @member_count).save
+		else
+			@member_count = @last_run.list_count
+		end
 	end
 
 	def robots

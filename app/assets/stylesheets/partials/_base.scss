@@ -7,7 +7,7 @@ $max-width: 960px;
 }
 
 h2 {
-	font: 300 24px/42px $base-ff;
+	font: 300 24px/36px $base-ff;
 	margin-top: 0;
 }
 
@@ -107,6 +107,7 @@ section {
 		}
 	}
 	&.social {
+		display: none;
 		position: fixed;
 		bottom: 0;
 		width: 100%;
@@ -120,8 +121,9 @@ section {
 			position: absolute;
 			left: 6%;
 			color: $link-color;
+			font-weight: 300;
 			&:hover {
-
+				
 			}
 		}
 		a.request-link {
@@ -137,7 +139,7 @@ section {
 				vertical-align: middle;
 				margin-bottom: 0.05em;
 			}
-			a {
+			a, label {
 				margin-left: 8px;
 				&:first-child {
 					margin-left: 0;
@@ -145,6 +147,10 @@ section {
 				img {
 					vertical-align: middle;
 					margin-bottom: 0.05em;
+				}
+				.email-share {
+					cursor: pointer;
+					display: inline;
 				}
 			}
 		}
@@ -267,7 +273,7 @@ section {
 						margin-bottom: 0;
 						width: 100%;
 						left: 3%;
-						padding-top: 15px;
+						padding-top: 20px;
 						padding-bottom: 0;
 						position: absolute;
 						min-height: 240px;
@@ -390,4 +396,95 @@ section {
 			}
 		}
 	}
+}
+
+.modal {
+
+  .modal-state {
+    display: none;
+  }
+
+  .modal-fade-screen { // overlay
+    @include transition(opacity 0.25s ease);
+    @include position(fixed, 0px 0px 0px 0px);
+    background: rgba(255,255,255, 0.95);
+    opacity: 0;
+    padding-top: 0.6em;
+    text-align: left;
+    visibility: hidden;
+    z-index: 99999999999;
+
+    @include media($tablet) {
+      padding-top: 10em;
+    }
+
+    .modal-bg {
+      @include position(absolute, 0px 0px 0px 0px);
+      cursor: pointer;
+    }
+  }
+
+  .modal-close {
+    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+    @include size(1.5em);
+    background: $modal-background;
+    cursor: pointer;
+
+    &:after,
+    &:before {
+      @include position(absolute, 3px 3px 0 50%);
+      @include transform(rotate(45deg));
+      @include size(0.15em 1.5em);
+      background: $modal-close-color;
+      content: '';
+      display: block;
+      margin: -3px 0 0 -1px;
+    }
+
+    &:hover:after,
+    &:hover:before {
+      background: darken($modal-close-color, 10%);
+    }
+
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+  }
+
+  .modal-inner {
+    @include transition(opacity 0.25s ease);
+    background: $modal-background;
+    margin-top: 0;
+    margin: auto;
+    max-height: 95%;
+    overflow: auto;
+    padding: $modal-padding / 2;
+    position: relative;
+    width: 95%;
+
+    @include media($largemobile) {
+      max-height: 70%;
+      padding: $modal-padding;
+      width: 60%;
+    }
+
+    @include media($tablet) {
+      width: 50%;
+    }
+
+    
+  }
+
+  .modal-state:checked + .modal-fade-screen {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-state:checked + .modal-fade-screen .modal-inner {
+    top: 0.5em;
+  }
+}
+
+.modal-open {
+  overflow: hidden;
 }
