@@ -1,45 +1,91 @@
-var $window, $body, winH;
-
-// first & last mac image
-var $introImg,
-		$outroImg,
-		topOff = 0,
-		topOff2 = 0;
+var $window, winW, winH, isSliderInit;
 
 $(function(){
 
-	// mobile slider
-	var mySwiper = new Swiper ('.swiper-container', {
-		pagination: $('.swiper-pagination'),
-		paginationClickable: true,
-		onTransitionStart: function(swiper) {
-			$('.swiper-slide-next, .swiper-slide-prev').find('.fadeable').removeClass('fadeIn').addClass('fadeOut');
-			$('.swiper-slide-active').find('.fadeable').removeClass('fadeOut').addClass('fadeIn');
-			$(swiper.slides).each(function(){
-				if ($(this).hasClass('swiper-slide-active')) {
-					$(this).find('.appImg img').show().addClass('bounceInUp');
-				}
-			});
-		}
+	$window = $(window);
+
+	init();
+
+});
+
+function init() {
+
+	winW = viewport().width;
+	winH = viewport().height;
+
+	if (winW < 1024 || Modernizr.touch) {
+
+		initSlider();
+
+	}
+
+	socialSetup();
+
+	subscribeSetup();
+
+	adjustScreen();
+
+	$window.resize(function(){
+
+		adjustScreen();
+		
 	});
 
-	$window = $(window);
-	winH = $window.height();
-	winW = $window.width();
-	$body = $('body');
-	$introImg = $('.intro');
-	$outroImg = $('.tech');
+}
 
-	$screen1 = $('.screen1');
+function socialSetup() {
 
-	//if (winW >= 768 && !Modernizr.touch) {
+	$('.tech-link').on('click', function(){
+
+		var textHeight = $('.tech-text').outerHeight();
+
+    $('html, body').animate({
+        scrollTop: $("#techs").offset().top - ((winH - textHeight) / 2)
+    }, 2000);
+
+	});
+
+	$('.request-link').on('click', function(){
+		$('html, body').animate({
+        scrollTop: $(".request").offset().top
+    }, 2000);
+	});
+
+	// twitter
+	$('.twitter').on('click', function() {
+		var width  = 660,
+				height = 400,
+				left 	 = ($(window).width() - width) / 2,
+				top    = ($(window).height() - height) / 2,
+				url    = this.href,
+				opts   = 'status=1' +
+								 ',width='  + width  +
+								 ',height=' + height +
+								 ',top='	  + top    +
+								 ',left='   + left;
+
+		window.open(url, 'twitter', opts);
+
+		return false;
+	});
+
+	// facebook
+	$('.facebook').on('click', function(e){
+		e.preventDefault();
+		FB.ui({
+		  method: 'share',
+		  href: 'http://onyxla.co/thoughts/why-i-left', //TODO: change to getdakota.com and add open graph tags
+		}, function(response){});
+	});
+
+	// email
+	$('.email-share').on('click', function(e){
+		e.preventDefault();
 		
-		//$('section').height($(window).height());
+	});
+}
 
-		init();
-
-	//}
-
+function subscribeSetup() {
 	// request an invite form submit
 	var divError = $('span.error'),
 			button   = $('input.request');
@@ -64,118 +110,110 @@ $(function(){
 				button.val(button.data('origText'));
 			});
 	});
-
-	// twitter
-	$('.twitter').on('click', function() {
-		var width  = 660,
-				height = 400,
-				left 	 = ($(window).width() - width) / 2,
-				top    = ($(window).height() - height) / 2,
-				url    = this.href,
-				opts   = 'status=1' +
-								 ',width='  + width  +
-								 ',height=' + height +
-								 ',top='	  + top    +
-								 ',left='   + left;
-
-		window.open(url, 'twitter', opts);
-
-		return false;
-	});
-
-	// facebook
-	$('.facebook').on('click', function(){
-		FB.ui({
-		  method: 'share',
-		  href: 'http://onyxla.co/thoughts/why-i-left', //TODO: change to getdakota.com and add open graph tags
-		}, function(response){});
-	});
-	
-
-});
-
-function init() {
-
-	//topOffs();
-
-	$window.scroll(function(){
-		handleScroll();
-	});
-
-	$window.resize(function(){
-		//$('section').height($(window).height());
-		//topOffs();
-	});
-
 }
 
-// handle scroll
-function handleScroll() {
-	
-	scrolledWin = getPageScroll();
-	$body.addClass('scrolling');	
+function viewport() {
+    var e = window, a = 'inner';
+    if (!('innerWidth' in window )) {
+        a = 'client';
+        e = document.documentElement || document.body;
+    }
+    return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
+}
 
-	var screen2Waypoint = new Waypoint({
-		element: $screen1,
-		offset: 100,
-		handler: function(direction) {
-			$screen1.find('.screen-1-callout').addClass("bounceInUp").show();
-		}
-	});
+function adjustScreen() {
 
+	winH = $window.height();
+	winW = viewport().width;
 
-	
-	// show logo
-	// if((scrolledWin * 1.5) > winH) {
-	// 	$body.addClass('content');
-	// }
-	
-	// show navigation 
-	// if(scrolledWin > 50) {
-	// 	$body.addClass('scrolled');
-	// }
-	
-	// app img animation - commenting out for now *****
-	// if(topOff >= scrolledWin) {
-	// 	$introImg.removeClass('sticky');
-	// } else {
-	// 	$introImg.addClass('sticky');
-	// }
-	// if(topOff2 >= scrolledWin) {
-	// 	$outroImg.removeClass('sticky');
-	// } else {
-	// 	$outroImg.addClass('sticky');
-	// }
-	
-	// reset navi on top scroll
-	// if(scrolledWin < winH) {
-	// 	$nav.attr("class", "").addClass('a1');
-	// }
+	if (winW >= 1024) {
+
+		$('.screen.slides-wrapper, .slider-nav').hide();
+
+		var s = skrollr.init({
+			forceHeight: false
+		});
 		
-}
+		setTimeout(function(){
+			var screenH = $('.screens').outerHeight(),
+					bottom = 0;
 
-// app img animation
-function topOffs() {
+			bottom = ((((winH - screenH) / winH) * 100) / 2) - 2;
 
-	var addHeight = 0;
-	if (winH <= 783) {
-		addHeight = 100;
+			$('.screens').attr('data--10p-top-top', 'bottom: ' + bottom + 'vh;');
+			$('.screens').attr('data-0-bottom-bottom', 'bottom: ' + bottom + 'vh;');
+			$('.screens').attr('style', 'bottom: ' + bottom + 'vh;');
+			s.refresh();
+
+		}, 500);
+
+	} else {
+		var s = skrollr.init();
+		s.destroy();
+
+		$('.screen.slides-wrapper, .slider-nav').show();
+		$('.text-node').attr('style', '');
+		if (!isSliderInit) {
+			initSlider();
+		}
 	}
-	topOff = $introImg.position();
-	topOff = topOff.top + addHeight;	
-	// topOff2 = $outroImg.position();
-	// topOff2 = topOff2.top;
+
+	if (Modernizr.touch) {
+		var s = skrollr.init();
+		s.destroy();
+		$('.screen.slides-wrapper, .slider-nav').show();
+	}
+
 }
 
-// get Page scroll	
-function getPageScroll() {
-  var yScroll;
-  if (self.pageYOffset) {
-  	yScroll = self.pageYOffset;
-  } else if (document.documentElement && document.documentElement.scrollTop) {	 // Explorer 6 Strict
-  	yScroll = document.documentElement.scrollTop;
-  } else if (document.body) {// all other Explorers
-  	yScroll = document.body.scrollTop;
-  }
-  return yScroll;
+function initSlider() {
+
+	var slidesArray = $('.slides div'),
+			textArray = $('.text-wrapper div');
+
+	var autoPlay = setInterval(function(){
+		startAutoPlay();
+	}, 4000);
+
+	$('.slider-nav span').on('click', function() {
+		var slideIndex = $(this).data('index');
+
+		$(this).addClass('active').siblings().removeClass('active');
+
+		$.each(slidesArray, function(index, value){
+			if (slideIndex == index) {
+				$(this).addClass('active').siblings().removeClass('active');
+			}
+		});
+
+		$.each(textArray, function(index, value){
+			if (slideIndex == index) {
+				$(this).addClass('active').siblings().removeClass('active');
+			}
+		});
+
+		clearInterval(autoPlay);
+
+		autoPlay = setInterval(function(){
+			startAutoPlay();
+		}, 4000);
+
+	});
+
+	isSliderInit = true;
+
+}
+
+function startAutoPlay() {
+	var currentSlide = $('.slides div.active'),
+			currentText = $('.text-wrapper div.active'),
+			currentMarker = $('.slider-nav span.active');
+
+	if (currentSlide.is(':last-child')) {
+		$('.slides div:first-child, .text-wrapper div:first-child, .slider-nav span:first-child').addClass('active').siblings().removeClass('active');
+	} else {
+		currentSlide.removeClass('active').next().addClass('active');
+		currentText.removeClass('active').next().addClass('active');
+		currentMarker.removeClass('active').next().addClass('active');
+	}
 }

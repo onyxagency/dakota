@@ -1,118 +1,86 @@
 <section class="intro">
-	<div class="section-wrapper">
-		<div class="header">
-			<div class="inner">
-				<img src="<%= asset_path 'dakota-logo.svg' %>" alt="Dakota">
-				<h1>Dakota seamlessly connects people with tech professionals for real-time support.</h1>
-			</div>
+	<div class="header">
+		<div class="inner">
+			<img src="<%= asset_path 'dakota-logo.svg' %>" alt="Dakota">
+			<h1>Dakota seamlessly connects people with tech professionals for real-time support.</h1>
 		</div>
-		<div class="appImg"></div>
+	</div>
+	<div class="app-img-wrapper">
+		<div class="app-img"></div>
 	</div>
 </section>
 
-<div class="swiper-container">
-	<div class="swiper-wrapper">
-		<section class="screen1 swiper-slide">
-			<div class="section-wrapper">
-				<div class="section-title">
-					<div class="inner">
-						<h2 class="animated fadeable">Get your computer fixed within minutes, not days.</h2>
-					</div>
-				</div>
-				<div class="appImg">
-					<img src="<%= asset_path 'screen-1-callout.png' %>" alt="I can't access websites" class="screen-1-callout callout animated">
-				</div>
-				<div class="section-subtitle">
-					<div class="inner">
-						<p class="animated fadeable">Just tell us what your problem is and we’ll do the rest.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="screen2 swiper-slide">
-			<div class="section-wrapper">
-				<div class="section-title">
-					<div class="inner">
-						<h2 class="animated fadeable">We’ll match you with an available tech in real-time.</h2>
-					</div>
-				</div>
-				<div class="appImg"></div>
-				<div class="section-subtitle">
-					<div class="inner">
-						<p class="animated fadeable">Let us do the work for you while you sit back and relax. That means no more lugging your computer to a shop or searching for an IT guy.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="screen3 swiper-slide">
-			<div class="section-wrapper">
-				<div class="section-title">
-					<div class="inner">
-						<h2 class="animated fadeable">Once matched, you’ll begin a live session with a real tech.</h2>
-					</div>
-				</div>
-				<div class="appImg">
-					<img src="<%= asset_path 'screen-3-callout.png' %>" alt="Tech User Zoom" class="screen-3-callout callout animated">
-				</div>
-				<div class="section-subtitle">
-					<div class="inner">
-						<p class="animated fadeable">Our vetting process ensures that we connect you with the best experts to help you. See your tech’s occupation, location, completed jobs, and rating.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="screen4 swiper-slide">
-			<div class="section-wrapper">
-				<div class="section-title">
-					<div class="inner">
-						<h2 class="animated fadeable">Talk directly with your tech and get your issue solved.</h2>
-					</div>
-				</div>
-				<div class="appImg">
-					<img src="<%= asset_path 'screen-4-callout.png' %>" alt="Chat Zoom" class="screen-4-callout callout animated">
-				</div>
-				<div class="section-subtitle">
-					<div class="inner">
-						<p class="animated fadeable">Dakota’s safe &amp; secure platform allows the tech to seamlessly fix your issue. You’ll also see exactly how much it costs, so there are no surprises.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="screen5 swiper-slide">
-			<div class="section-wrapper">
-				<div class="section-title">
-					<div class="inner">
-						<h2 class="animated fadeable">Shape a better community by reviewing your experience.</h2>
-					</div>
-				</div>
-				<div class="appImg"></div>
-				<div class="section-subtitle">
-					<div class="inner">
-						<p class="animated fadeable">Your reviews matter. We’ll remember your choices and take your feedback to improve the experience each time you use the app.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="screen6 swiper-slide">
-			<div class="section-wrapper">
-				<div class="section-title">
-					<div class="inner">
-						<h2 class="animated fadeable">Dakota is for techs too. Work when you want. Make money.</h2>
-					</div>
-				</div>
-				<div class="appImg">
-					<img src="<%= asset_path 'screen-6-callout.png' %>" alt="Tech Zoom" class="screen-6-callout callout animated">
-				</div>
-				<div class="section-subtitle">
-					<div class="inner">
-						<p class="animated fadeable">Dakota makes it super easy to select, track, and get paid for your jobs. You’ll never have to look for clients again.</p>
-					</div>
-				</div>
-			</div>
-		</section>
+<section class="social" data-anchor-target=".intro" data-0-center-bottom="opacity: 0;" data-0-top-bottom="opacity: 1;">
+	<a class="tech-link" href="#techs">Are you a tech professional?</a>
+	<a class="request-link" href="#request">Request an Invite</a>
+	<div class="social-share">
+		<span>Share</span>
+		<a class="twitter" href="https://twitter.com/share?text=Check out Dakota!"><img src="<%= asset_path 'twitter-blue.svg' %>" alt="Share on Twitter"></a>
+		<a class="facebook" href="#"><img src="<%= asset_path 'facebook-blue.svg' %>" alt="Share on Facebook"></a>
+		<a class="email-share" href="#"><img src="<%= asset_path 'email-blue.svg' %>" alt="Share via Email"></a>
 	</div>
-	<div class="swiper-pagination"></div>
-</div>
+</section>
+
+<section class="walkthrough-section">
+	<div class="walkthrough-wrapper">
+		<div class="walkthrough" data-0-center-bottom="opacity: 1;" data-0-top-bottom="opacity: 0;">
+			<div class="screens-wrapper">
+				<div class="screens" data-anchor-target=".walkthrough" data-0-bottom-top="bottom: -100vh;" data--10p-top-top="bottom: 10vh;" data-0-bottom-bottom="bottom: 10vh;" data-0-top-bottom="bottom: 100vh;">
+						<div class="screen fix is-transparent" data-anchor-target=".walkthrough-wrapper .fix-text" data-0-top-top="opacity: 1;" data-0-top-bottom="opacity: 0;"></div>
+						<div class="screen match is-transparent" data-anchor-target=".walkthrough-wrapper .match-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
+						<div class="screen session is-transparent" data-anchor-target=".walkthrough-wrapper .session-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
+						<div class="screen solve is-transparent" data-anchor-target=".walkthrough-wrapper .solve-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
+						<div class="screen review is-transparent" data-anchor-target=".walkthrough-wrapper .review-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
+						<div class="screen tech is-transparent" data-anchor-target=".walkthrough-wrapper .tech-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
+						<div class="screen slides-wrapper">
+							<div class="slides">
+								<div class="active"><img src="<%= asset_path 'screen-1@2x.png' %>" alt=""></div>
+								<div><img src="<%= asset_path 'screen-2@2x.png' %>" alt=""></div>
+								<div><img src="<%= asset_path 'screen-3@2x.png' %>" alt=""></div>
+								<div><img src="<%= asset_path 'screen-4@2x.png' %>" alt=""></div>
+								<div><img src="<%= asset_path 'screen-5@2x.png' %>" alt=""></div>
+								<div><img src="<%= asset_path 'screen-6@2x.png' %>" alt=""></div>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="slider-nav">
+				<span class="active" data-index="0">●</span>
+				<span data-index="1">●</span>
+				<span data-index="2">●</span>
+				<span data-index="3">●</span>
+				<span data-index="4">●</span>
+				<span data-index="5">●</span>
+			</div>
+			<div class="text-wrapper">
+				<div class="text-node main fix-text active" data-anchor-target=".walkthrough-wrapper" data--5p-bottom-top="opacity: 0; top: 20vh;" data--10p-top-top="opacity: 1; top: 20vh;">
+					<h2>Get your computer fixed within minutes, not days.</h2>
+					<p>Just tell us what your problem is and we’ll do the rest.</p>
+				</div>
+				<div class="text-node match-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
+					<h2>We’ll match you with an available tech in real-time.</h2>
+					<p>Let us do the work for you while you sit back and relax. That means no more lugging your computer to a shop or searching for an IT guy.</p>
+				</div>
+				<div class="text-node session-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
+					<h2>Once matched, you’ll begin a live session with a real tech.</h2>
+					<p>Our vetting process ensures that we connect you with the best experts to help you. See your tech’s occupation, location, completed jobs, and rating.</p>
+				</div>
+				<div class="text-node solve-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
+					<h2>Talk directly with your tech and get your issue solved.</h2>
+					<p>Dakota’s safe &amp; secure platform allows the tech to seamlessly fix your issue. You’ll also see exactly how much it costs, so there are no surprises.</p>
+				</div>
+				<div class="text-node review-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
+					<h2>Shape a better community by reviewing your experience.</h2>
+					<p>Your reviews matter. We’ll remember your choices and take your feedback to improve the experience each time you use the app.</p>
+				</div>
+				<div id="techs" class="text-node tech-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
+					<h2>Dakota is for techs too. Work when you want. Make money.</h2>
+					<p>Dakota makes it super easy to select, track, and get paid for your jobs. You’ll never have to look for clients again.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 <section class="users">
 	<div class="inner">

@@ -3,96 +3,10 @@
 		@include padding(unpack(60px 20px 70px));
 	}
 	section {
-		.section-wrapper {
-			.header {
-				h1 {
-					font-size: 32px;
-					font-weight: 300;
-					line-height: 48px;
-					margin: 10px auto 0;
-				}
-			}
-		}
-		&.intro {
-			.appImg {
-				min-height: 430px;
-				background-size: 500px 380px;
-				margin-top: -90px;
-			}
-		}
-		&.screen1 {
-			.appImg {
-				background-size: 500px 380px;
-				min-height: 430px;
-				.callout {
-					width: 165px;
-					height: 165px;
-					top: 45%;
-					right: 2%;
-				}	
-			}
-		}
-		&.screen2 {
-			.appImg {
-				background-size: 500px 380px;
-				min-height: 430px;
-			}
-		}
-		&.screen3 {
-			.appImg {
-				background-size: 500px 380px;
-				min-height: 430px;
-				.callout {
-					width: 362px;
-					height: 121px;
-					top: 55%;
-				}		
-			}
-		}
-		&.screen4 {
-			.appImg {
-				background-size: 500px 380px;
-				min-height: 430px;
-				.callout {
-					width: 246px;
-					height: 246px;
-					top: 40%;
-					left: 10px;
-				}		
-			}
-		}
-		&.screen5 {
-			.appImg {
-				background-size: 500px 380px;
-				min-height: 430px;
-			}
-		}
-		&.screen6 {
-			.appImg {
-				background-size: 500px 380px;
-				min-height: 430px;
-				.callout {
-					width: 291px;
-					height: 233px;
-					top: 35%;
-					right: 10px;
-				}		
-			}
-		}
 		&.users {
 			.inner {
 				padding: 50px 20px 70px;
 			}
-		}
-	}
-	// Mobile Slider Styles
-	.swiper-container {
-	  padding: 80px 0;
-	}  
-
-	.swiper-container-horizontal {
-		& > .swiper-pagination {
-			bottom: 50px !important;
 		}
 	}
 }

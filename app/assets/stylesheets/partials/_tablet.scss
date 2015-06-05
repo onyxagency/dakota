@@ -1,11 +1,89 @@
 @include media($tablet) {
+
+	p {
+		font-size: 18px;
+		line-height: 27px;
+	}
+
 	section {
+		&.intro {
+			.header {
+				height: 397px;
+				.inner {
+					padding: 55px 20px 70px;
+					h1 {
+						font-size: 42px;
+						line-height: 56px;
+						margin: 20px auto 0;
+					}
+				}
+			}
+			.app-img-wrapper {
+				margin-top: -110px;
+				.app-img {
+
+				}
+			}
+		}
+		&.walkthrough-section {
+			min-height: 2000px;
+			min-height: 200vh;
+			.walkthrough-wrapper {
+				.walkthrough {
+					padding: 100px 0;
+					.screens-wrapper {
+						width: 65%;
+						height: 100%;
+						position: absolute;
+						.screens {
+							width: 55%;
+							padding-bottom: 42%;
+							background-image: asset-url('screen-1@2x.png');
+							background-size: cover;
+							background-repeat: no-repeat;
+							background-position: 50%;
+							position: fixed !important;
+							display: block;
+							-webkit-backface-visibility: hidden;
+						}
+					}
+					.text-wrapper {
+						display: block;
+						width: 33%;
+						left: 67%;
+						position: relative;
+						vertical-align: middle;
+						padding-bottom: 50vh;
+						.text-node {
+							margin-top: 50vh;
+							position: relative;
+							&.main {
+								position: relative;
+								margin-top: 40%;
+							}
+						}
+					}
+				}
+			}
+		}
 		&.users {
 			width: 50%;
 			float: left;
+			.inner {
+				padding: 100px 20px 120px;
+			}
 		}
 		&.request {
 			clear: both;
+			min-height: 600px;
+			.inner {
+				padding: 0;
+				width: 360px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include transform(translate(-50%, -50%));
+			}
 		}
 	}
 }

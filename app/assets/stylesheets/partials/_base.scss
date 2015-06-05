@@ -8,10 +8,15 @@ $max-width: 960px;
 
 h2 {
 	font: 300 24px/42px $base-ff;
+	margin-top: 0;
 }
 
 p {
 	font: 300 16px/24px $base-ff;
+}
+
+a {
+	text-decoration: none;
 }
 
 .btn {
@@ -28,125 +33,247 @@ p {
 	margin: auto;
 }
 
+@include media($max) {
+
+	.is-transparent {
+		opacity: 0 !important;
+		pointer-events: none;
+	}
+
+	.screens {
+		width: 95%;
+		padding-bottom: 72%;
+		margin-left: 2.5%;
+		bottom: initial !important;
+	}
+
+	.text-wrapper {
+		div {
+			opacity: 0;
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+
+}
+
 section {
 	background: transparent;
 	position: relative;
-	.section-wrapper {
+	&.intro {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: table;
 		width: 100%;
 		height: 100%;
-		position: relative;
+		height: 100vh;
+		box-sizing: border-box;
 		.header {
 			background: asset-url('header.jpg') center center no-repeat;
 			background-size: cover;
 			height: 300px;
 			width: 100%;
+			img {
+				width: 99px;
+				height: 38px;
+			}
 			h1 {
 				color: $title-color;
 				font-size: 24px;
 				font-weight: 300;
 				line-height: 36px;
-				margin: 30px auto 0;
+				margin: 20px auto 0;
 				max-width: 740px;
 			}
 		}
-		.section-title, .section-subtitle {
-			.inner {
-				@include padding(unpack(0 15px));
-				max-width: 600px;
-				h2 {
-					margin: 0;
+		.app-img-wrapper {
+			padding: 0 6%;
+			margin: -70px auto 0;
+			max-width: 750px;
+			.app-img {
+				background-image: asset-url('screen-1@2x.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				position: relative;
+				display: block;
+				-webkit-backface-visibility: hidden;
+				width: 95%;
+				padding-bottom: 72%;
+				margin-left: 2.5%;
+			}
+		}
+	}
+	&.social {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 60px;
+		z-index: 99;
+		background-color: $title-color;
+		border-top: 1px solid $border-color;
+		line-height: 60px;
+		text-align: center;
+		a.tech-link {
+			position: absolute;
+			left: 6%;
+			color: $link-color;
+			&:hover {
+
+			}
+		}
+		a.request-link {
+			font-size: 18px;
+			font-weight: 300;
+			color: $accent-bg-color;
+		}
+		.social-share {
+			position: absolute;
+			right: 6%;
+			top: 0;
+			span {
+				vertical-align: middle;
+				margin-bottom: 0.05em;
+			}
+			a {
+				margin-left: 8px;
+				&:first-child {
+					margin-left: 0;
+				}
+				img {
+					vertical-align: middle;
+					margin-bottom: 0.05em;
 				}
 			}
 		}
-		.appImg {
-			width: 100%;
-			height: 100%;
-			min-height: 300px;
+	}
+	&.walkthrough-section {
+		box-sizing: border-box;
+		padding-top: 100vh;
+		width: 100%;
+		background-color: transparent;
+		position: relative;
+		z-index: 9;
+		.walkthrough-wrapper {
+			box-sizing: border-box;
+			max-width: 100%;
+			padding: 15vh 6%;
+			margin: 0 auto;
 			position: relative;
-			.callout {
-				position: absolute;
+			transition: none !important;
+			-webkit-backface-visibility: hidden;
+			.walkthrough {
+				display: table;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+				transition: none !important;
+				-webkit-backface-visibility: hidden;
+				.screens-wrapper {
+					width: 100%;
+					height: auto;
+					display: block;
+					position: relative;
+					left: 0;
+					overflow: hidden;
+					z-index: 100;
+					.screens {
+						background-image: asset-url('screen-1@2x.png');
+						background-size: cover;
+						background-repeat: no-repeat;
+						background-position: 50%;
+						position: relative !important;
+						display: block;
+						-webkit-backface-visibility: hidden;
+						.screen {
+							position: absolute;
+							top: 10%;
+							left: 8%;
+							width: 82%;
+							height: 65%;
+							overflow: hidden;
+							background-size: cover;
+							background-repeat: no-repeat;
+							background-position: 50%;
+							@include transition(none!important); 
+	  					-webkit-backface-visibility: hidden;
+						}
+						.screen.fix {
+							background-image: asset-url('screen-1@2x.png');
+						}
+						.screen.match {
+							background-image: asset-url('screen-2@2x.png');
+						}
+						.screen.session {
+							background-image: asset-url('screen-3@2x.png');
+						}
+						.screen.solve {
+							background-image: asset-url('screen-4@2x.png');
+						}
+						.screen.review {
+							background-image: asset-url('screen-5@2x.png');
+						}
+						.screen.tech {
+							background-image: asset-url('screen-6@2x.png');
+						}
+						.screen.slides-wrapper {
+							display: none;
+							.slides {
+								div {
+									position: absolute;
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+									opacity: 0;
+									&.active {
+										opacity: 1;
+									}
+									img {
+
+									}
+								}
+							}
+						}
+					}
+				}
+				.slider-nav {
+					display: none;
+					font-size: 12px;
+					color: #ccc;
+					margin-top: 20px;
+					text-align: center;
+					span {
+						padding: 0 7px;
+						cursor: pointer;
+					}
+					span.active {
+						color: $accent-bg-color;
+					}
+				}
+				.text-wrapper {
+					display: block;
+					width: 100%;
+					left: 0;
+					position: relative;
+					vertical-align: middle;
+					padding-bottom: 0;
+					min-height: 240px;
+					.text-node {
+						margin-top: 0;
+						margin-bottom: 0;
+						width: 100%;
+						left: 3%;
+						padding-top: 15px;
+						padding-bottom: 0;
+						position: absolute;
+						min-height: 240px;
+					}
+				}
 			}
-		}
-	}
-	&.intro {
-		.appImg {
-			background: asset-url('screen-1@2x.png') center center / 340px 258px no-repeat;
-			margin-top: -80px;
-		}
-		&.sticky {
-			.appImg {
-				background: asset-url('screen-1@2x.png') center center / 529px 402px no-repeat fixed;
-			}
-		}
-	}
-	&.screen1 {
-		.appImg {
-			background: asset-url('screen-1@2x.png') center center / 340px 258px no-repeat;
-			max-width: 820px;
-			margin: auto;
-			.callout {
-				display: none;
-				width: 100px;
-				height: 100px;
-				top: 50%;
-				right: 10%;
-			}	
-		}
-	}
-	&.screen2 {
-		.appImg {
-			background: asset-url('screen-2@2x.png') center center / 340px 258px no-repeat;	
-			max-width: 820px;
-			margin: auto;
-		}
-	}
-	&.screen3 {
-		.appImg {
-			background: asset-url('screen-3@2x.png') center center / 340px 258px no-repeat;
-			max-width: 820px;
-			margin: auto;
-			.callout {
-				display: none;
-				width: 306px;
-				height: 102px;
-				top: 50%;
-				right: 10px;
-			}		
-		}
-	}
-	&.screen4 {
-		.appImg {
-			background: asset-url('screen-4@2x.png') center center / 340px 258px no-repeat;
-			max-width: 820px;
-			margin: auto;
-			.callout {
-				display: none;
-				width: 150px;
-				height: 150px;
-				top: 40%;
-				right: 10px;
-			}		
-		}
-	}
-	&.screen5 {
-		.appImg {
-			background: asset-url('screen-5@2x.png') center center / 340px 258px no-repeat;	
-			max-width: 820px;
-			margin: auto;
-		}
-	}
-	&.screen6 {
-		.appImg {
-			background: asset-url('screen-6@2x.png') center center / 340px 258px no-repeat;
-			max-width: 820px;
-			margin: auto;
-			.callout {
-				display: none;
-				width: 218px;
-				height: 174px;
-				top: 28%;
-				right: 10px;
-			}		
 		}
 	}
 	&.users {
@@ -244,34 +371,14 @@ section {
 				color: $title-color;
 			}
 		}
-		.mobile-share {
-			margin-top: 30px;
-			height: 40px;
-			line-height: 40px;
-			span {
-				vertical-align: middle;
-				margin-bottom: 0.05em;
-			}
-			a {
-				margin-left: 8px;
-				&:first-child {
-					margin-left: 0;
-				}
-				img {
-					vertical-align: middle;
-					margin-bottom: 0.05em;
-				}
-			}
-		}
 		.request-success {
 			display: none;
-			//min-height: 350px;
 			a {
 				@extend .btn;
 				color: $title-color;
 				&.twitter.large {
 					background: $twitter-bg-color;
-					margin: 30px 0 20px;
+					margin: 30px auto 20px;
 				}
 				&.facebook.large {
 					background: $facebook-bg-color;
@@ -284,106 +391,3 @@ section {
 		}
 	}
 }
-
-// Mobile Slider Styles
-.swiper-container {
-  width: 100%;
-  height: auto;
-  padding: 60px 0;
-  .swiper-pagination-bullet-active {
-  	background: $accent-bg-color;
-  }
-}  
-
-.swiper-container-horizontal {
-	& > .swiper-pagination {
-		bottom: 30px !important;
-	}
-}
-
-
-// use some of this for desktop
-// $max-width: 960px;
-
-// .inner { 
-// 	@include outer-container; 
-// 	@include padding(unpack(60px 15px));
-// 	text-align: center;
-// }
-
-// body {
-// 	//padding-top: 125px;
-// }
-
-// // header {
-// // 	background: asset-url('header.jpg') center center no-repeat;
-// // 	background-size: cover;
-// // 	height: 386px;
-// // 	width: 100%;
-// // 	position: absolute;
-// // 	top: 0;
-// // 	left: 0;
-// // 	h1 {
-// // 		color: $title-color;
-// // 		font-size: 28px;
-// // 		font-weight: 300;
-// // 		line-height: 42px;
-// // 	}
-// // }
-
-// section {
-// 	background: transparent;
-// 	min-height: 600px;
-// 	position: relative;
-// 	.section-wrapper {
-// 		width: 100%;
-// 		height: 100%;
-// 		position: relative;
-// 		overflow: hidden;
-// 		.header {
-// 			background: asset-url('header.jpg') center center no-repeat;
-// 			background-size: cover;
-// 			height: 386px;
-// 			width: 100%;
-// 			h1 {
-// 				color: $title-color;
-// 				font-size: 28px;
-// 				font-weight: 300;
-// 				line-height: 46px;
-// 			}
-// 		}
-// 		.appImg {
-// 			//position: absolute;
-// 			//top: 0;
-// 			//left: 0;
-// 			width: 100%;
-// 			height: 402px;
-// 		}
-// 		.content {
-// 			@include span-columns(8);
-// 			@include shift(2);
-// 		}
-// 	}
-// 	&.screen1 {
-// 		//margin-top: -260px;
-// 		.appImg {
-// 			background: asset-url('1@2x.png') center 82% / 90% auto no-repeat;
-// 			margin-top: -215px;
-// 		}
-// 		&.sticky {
-// 			.appImg {
-// 				background: asset-url('1@2x.png') center center / 529px 402px no-repeat fixed;
-// 			}
-// 		}
-// 	}
-// 	&.screen2 {
-// 		.appImg {
-// 			background: asset-url('1@2x.png') center center / 529px 402px no-repeat;	
-// 		}
-// 	}
-// 	&.screen3 {
-// 		.appImg {
-// 			background: #f7f7f7 asset-url('2@2x.png') center center / 529px 402px no-repeat;	
-// 		}
-// 	}
-// }

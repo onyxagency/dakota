@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require modernizr.min.js
+//= require skrollr.min.js
 //= require swiper.min.js
 //= require jquery.waypoints.min.js
 //= require_tree .
