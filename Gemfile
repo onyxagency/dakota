@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'gibbon'
+gem 'mail_form'
 
 # sass library / grid 
 gem 'normalize-rails'

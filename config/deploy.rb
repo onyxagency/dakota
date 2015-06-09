@@ -4,7 +4,6 @@ lock '3.3.5'
 set :repo_url, 'git@github.com:onyxagency/dakota.git'
 set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system/members}
-set :rails_env, fetch(:stage)
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -50,7 +49,7 @@ namespace :deploy do
   desc "reload the database with seed data"
   task :seed do
   	on roles(:app) do
-    	execute "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=staging"
+    	execute "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{fetch(:rails_env)}"
   	end
   end
 

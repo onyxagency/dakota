@@ -3,7 +3,6 @@ $max-width: 960px;
 .inner { 
 	@include outer-container; 
 	@include padding(unpack(30px 20px 40px));
-	text-align: center;
 }
 
 h2 {
@@ -31,6 +30,17 @@ a {
 	text-align: center;
 	text-decoration: none;
 	margin: auto;
+}
+
+.input {
+	background: $input-bg-color;
+	border: 0;
+	font: 300 15px $base-ff;
+	outline: 0;
+	width: 100%;
+	max-width: 360px;
+	height: 53px;
+	text-align: center;
 }
 
 @include media($max) {
@@ -70,39 +80,45 @@ section {
 		height: 100%;
 		height: 100vh;
 		box-sizing: border-box;
+		z-index: 10;
 		.header {
 			background: asset-url('header.jpg') center center no-repeat;
 			background-size: cover;
-			height: 300px;
+			height: 100%;
 			width: 100%;
-			img {
-				width: 99px;
-				height: 38px;
-			}
-			h1 {
-				color: $title-color;
-				font-size: 24px;
-				font-weight: 300;
-				line-height: 36px;
-				margin: 20px auto 0;
-				max-width: 740px;
-			}
-		}
-		.app-img-wrapper {
-			padding: 0 6%;
-			margin: -70px auto 0;
-			max-width: 750px;
-			.app-img {
-				background-image: asset-url('screen-1@2x.png');
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: 50%;
-				position: relative;
-				display: block;
-				-webkit-backface-visibility: hidden;
-				width: 95%;
-				padding-bottom: 72%;
-				margin-left: 2.5%;
+			.inner {
+				.header-text {
+					@include transform(translate(-50%, -30%));
+					@include position(absolute, 30% null null 50%);
+					width: 90%;
+					text-align: center;
+					img {
+						width: 99px;
+						height: 38px;
+					}
+					h1 {
+						color: $title-color;
+						font-size: 24px;
+						font-weight: 300;
+						line-height: 36px;
+						margin: 40px auto 0;
+						max-width: 740px;
+					}
+				}
+				a {
+					position: absolute;
+					bottom: 15%;
+					left: 50%;
+					@include transform(translateX(-50%));
+					color: $title-color;
+					font-size: 14px;
+					text-transform: uppercase;
+					img {
+						display: block;
+						width: 15px;
+						margin: auto;
+					}
+				}
 			}
 		}
 	}
@@ -184,10 +200,10 @@ section {
 					display: block;
 					position: relative;
 					left: 0;
-					overflow: hidden;
+					//overflow: hidden;
 					z-index: 100;
 					.screens {
-						background-image: asset-url('screen-1@2x.png');
+						background-image: asset-url('display-blank.jpg');
 						background-size: cover;
 						background-repeat: no-repeat;
 						background-position: 50%;
@@ -196,11 +212,10 @@ section {
 						-webkit-backface-visibility: hidden;
 						.screen {
 							position: absolute;
-							top: 10%;
-							left: 8%;
-							width: 82%;
-							height: 65%;
-							overflow: hidden;
+							top: 7%;
+							left: 6%;
+							width: 88%;
+							height: 65.5%;
 							background-size: cover;
 							background-repeat: no-repeat;
 							background-position: 50%;
@@ -208,22 +223,46 @@ section {
 	  					-webkit-backface-visibility: hidden;
 						}
 						.screen.fix {
-							background-image: asset-url('screen-1@2x.png');
+							background-image: asset-url('fix.jpg');
+							img {
+								width: 30%;
+								position: absolute;
+								bottom: -20%;
+								right: -12%;
+							}
 						}
 						.screen.match {
-							background-image: asset-url('screen-2@2x.png');
+							background-image: asset-url('match.jpg');
 						}
 						.screen.session {
-							background-image: asset-url('screen-3@2x.png');
+							background-image: asset-url('session.jpg');
+							img {
+								width: 70%;
+								position: absolute;
+								bottom: -18%;
+								right: -12%;
+							}
 						}
 						.screen.solve {
-							background-image: asset-url('screen-4@2x.png');
+							background-image: asset-url('solve.jpg');
+							img {
+								position: absolute;
+							  left: -7%;
+							  bottom: -45%;
+							  width: 50%;
+							}
 						}
 						.screen.review {
-							background-image: asset-url('screen-5@2x.png');
+							background-image: asset-url('review.jpg');
 						}
 						.screen.tech {
-							background-image: asset-url('screen-6@2x.png');
+							background-image: asset-url('tech.jpg');
+							img {
+							  position: absolute;
+							  bottom: -22%;
+							  width: 60%;
+							  right: -12%;
+							}
 						}
 						.screen.slides-wrapper {
 							display: none;
@@ -268,11 +307,13 @@ section {
 					vertical-align: middle;
 					padding-bottom: 0;
 					min-height: 240px;
+					text-align: center;
+					max-width: 600px;
+					margin: auto;
 					.text-node {
 						margin-top: 0;
 						margin-bottom: 0;
 						width: 100%;
-						left: 3%;
 						padding-top: 20px;
 						padding-bottom: 0;
 						position: absolute;
@@ -282,43 +323,63 @@ section {
 			}
 		}
 	}
-	&.users {
-		background: $alt-bg-color;
-		text-align: center;
-		h2 {
-			font-weight: 400;
-			margin-top: 0;
+	&.benefits-wrapper {
+		position: relative;
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
 		}
-		img {
-			width: 250px;
-			height: 250px;
-			margin: auto;
-		}
-		ul {
-			list-style-type: none;
-			margin: 40px auto 0;
-			max-width: 400px;
-			padding: 0;
-			text-align: left;
-			li {
-				background: asset-url('check-blue.svg') left 6px no-repeat;
-				padding-left: 28px;
-				margin-top: 20px;
-				font: 300 16px/24px $base-ff;
+		.users {
+			background: $alt-bg-color;
+			text-align: center;
+			h2 {
+				font-weight: 400;
+				margin-top: 0;
+			}
+			img {
+				width: 250px;
+				height: 250px;
+				margin: auto;
+			}
+			ul {
+				list-style-type: none;
+				margin: 40px auto 0;
+				max-width: 400px;
+				padding: 0;
+				text-align: left;
+				li {
+					background: asset-url('check-blue.svg') left 6px no-repeat;
+					padding-left: 28px;
+					margin-top: 20px;
+					font: 300 16px/24px $base-ff;
+				}
 			}
 		}
-	}
-	&.techs {
-		@extend .users;
-		background: $dark-accent-bg-color;
-		color: $title-color;
-		ul {
-			li {
-				background: asset-url('check-white.svg') left 6px no-repeat;
+		#line {
+			position: absolute;
+			top: 38%;
+			left: 50%;
+			@include transform(translate(-50%, -50%));
+			width: 43%;
+			z-index: 3;
+			display: none;
+		}
+		.techs {
+			@extend .users;
+			background: $dark-accent-bg-color;
+			color: $title-color;
+			ul {
+				li {
+					background: asset-url('check-white.svg') left 6px no-repeat;
+				}
 			}
 		}
 	}
 	&.request {
+		.inner {
+			text-align: center;
+		}
 		h2 {
 			margin: 0;
 		}
@@ -330,7 +391,7 @@ section {
 			}
 		}
 		span.error {
-			color: #ff0000;
+			color: $error-color;
 			display: block;
 			font-size: 14px;
 			line-height: 21px;
@@ -339,14 +400,7 @@ section {
 		}
 		form {
 			input[type="email"] {
-				background: $input-bg-color;
-				border: 0;
-				font: 300 15px $base-ff;
-				outline: 0;
-				width: 100%;
-				max-width: 360px;
-				height: 53px;
-				text-align: center;
+				@extend .input;
 			}
 			.field-wrap {
 				margin: 15px 0;
@@ -407,7 +461,7 @@ section {
   .modal-fade-screen { // overlay
     @include transition(opacity 0.25s ease);
     @include position(fixed, 0px 0px 0px 0px);
-    background: rgba(255,255,255, 0.95);
+    background: rgba(255,255,255, 0.98);
     opacity: 0;
     padding-top: 0.6em;
     text-align: left;
@@ -415,7 +469,7 @@ section {
     z-index: 99999999999;
 
     @include media($tablet) {
-      padding-top: 10em;
+      padding-top: 6em;
     }
 
     .modal-bg {
@@ -463,7 +517,7 @@ section {
     width: 95%;
 
     @include media($largemobile) {
-      max-height: 70%;
+      max-height: 90%;
       padding: $modal-padding;
       width: 60%;
     }
@@ -472,7 +526,48 @@ section {
       width: 50%;
     }
 
-    
+    .modal-content {
+    	width: 300px;
+    	margin: auto;
+    	h2 {
+    		text-align: center;
+    		margin-bottom: 10px;
+    	}
+    	.share-email-flash {
+    		font-size: 14px;
+    		color: $error-color;
+    		text-align: center;
+    		display: block;
+    	}
+    	input[type="text"] {
+    		@extend .input;
+    		margin: 0 0 20px;
+    		text-align: left;
+    		padding: 10px;
+    	}
+    	textarea {
+    		@extend .input;
+    		height: 120px;
+    		text-align: left;
+    		padding: 10px;
+    	}
+    	input[type="submit"] {
+    		@extend .btn;
+				background: $accent-bg-color;
+				color: $title-color;
+				margin: 10px 0 0;
+				width: 48%;
+				float: left;
+    	}
+    	button {
+				@extend .btn;
+				background: $base-color;
+				color: $title-color;
+				margin: 10px 0 0;
+				width: 48%;
+				float: right;
+    	}
+    }
   }
 
   .modal-state:checked + .modal-fade-screen {

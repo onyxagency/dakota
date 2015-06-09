@@ -19,6 +19,21 @@ function init() {
 
 	}
 
+	var line = new Vivus('line', {type: 'scenario', start: 'inViewport', forceRender: false});
+
+	$('.header a').on('click', function(){
+		var textHeight = $('.fix-text').outerHeight();
+		if (winW < 1024 || Modernizr.touch) {
+			$('html, body').animate({
+        scrollTop: $(".fix").offset().top - 60
+    	}, 2000);
+		} else {
+			$('html, body').animate({
+        scrollTop: $(".fix").offset().top + 150
+    	}, 2000);
+		}
+	});
+
 	socialSetup();
 
 	subscribeSetup();
@@ -78,12 +93,6 @@ function socialSetup() {
 		}, function(response){});
 	});
 
-	// email
-	// $('.email-share').on('click', function(e){
-	// 	e.preventDefault();
-
-	// });
-
 	$("#modal-1").on("change", function() {
     if ($(this).is(":checked")) {
       $("body").addClass("modal-open");
@@ -92,13 +101,40 @@ function socialSetup() {
     }
   });
 
-  $(".modal-fade-screen, .modal-close").on("click", function() {
+  $(".modal-fade-screen, .modal-close, .cancel-email").on("click", function() {
     $(".modal-state:checked").prop("checked", false).change();
+    $('#send-email').val('');
+    $('.modal-content textarea').val('');
+    $('.share-email-flash').text('');
   });
 
   $(".modal-inner").on("click", function(e) {
     e.stopPropagation();
   });
+
+  var divError = $('.share-email-flash'),
+			button   = $('input.send-email');
+
+  $('form#share-email').submit(function(){
+		$(this).unbind('submit')
+			.bind("ajax:beforeSend", function(evt, xhr, settings){
+				button.data('origText', button.val());
+				button.val('Sending...');
+			})
+			.bind("ajax:success", function(evt, data, status, xhr){
+				if (data.message == "success"){
+					divError.html('Thanks for sharing!').css('color', '#4F8A10');
+					button.val(button.data('origText'));
+				} else {
+					divError.html(data.message);
+					button.val(button.data('origText'));
+				}
+			})
+			.bind("ajax:error", function(evt, xhr, status, error){
+				divError.html("Oops, something went wrong. Please reload the page and try again.")
+				button.val(button.data('origText'));
+			});
+	});
 
 }
 
@@ -172,6 +208,9 @@ function adjustScreen() {
 		if (!isSliderInit) {
 			initSlider();
 		}
+
+		var screenWidth = $('.screens').width();
+		$('.slides div img').width(screenWidth * .875);
 	}
 
 	if (Modernizr.touch) {

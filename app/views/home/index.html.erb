@@ -1,26 +1,14 @@
 <section class="intro">
 	<div class="header">
 		<div class="inner">
-			<img src="<%= asset_path 'dakota-logo.svg' %>" alt="Dakota">
-			<h1>Dakota seamlessly connects people with tech professionals for real-time support.</h1>
+			<div class="header-text">
+				<img src="<%= asset_path 'dakota-logo.svg' %>" alt="Dakota">
+				<h1>An app that seamlessly connects people with tech professionals for real-time support.</h1>
+			</div>
+			<a href="#">See How It Works <img src="<%= asset_path 'down-arrow.svg' %>"></a>
 		</div>
 	</div>
-	<div class="app-img-wrapper">
-		<div class="app-img"></div>
-	</div>
 </section>
-
-<div class="modal">
-  <input class="modal-state" id="modal-1" type="checkbox" />
-  <div class="modal-fade-screen">
-    <div class="modal-inner">
-      <div class="modal-close" for="modal-1"></div>
-      <h1>Modal Title</h1>
-      <p class="modal-intro">Intro text lorem ipsum dolor sit ametm, quas, eaque facilis aliquid cupiditate tempora cumque ipsum accusantium illo modi commodi  minima.</p>
-      <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
-    </div>
-  </div>
-</div>
 
 <section class="social" data-anchor-target=".intro" data-0-center-bottom="opacity: 0;" data-0-top-bottom="opacity: 1;">
 	<a class="tech-link" href="#techs">Are you a tech professional?</a>
@@ -29,7 +17,6 @@
 		<span>Share</span>
 		<a class="twitter" href="https://twitter.com/share?text=Check out Dakota!"><img src="<%= asset_path 'twitter-blue.svg' %>" alt="Share on Twitter"></a>
 		<a class="facebook" href="#"><img src="<%= asset_path 'facebook-blue.svg' %>" alt="Share on Facebook"></a>
-		<!-- <a class="email-share" href="#"><img src="<%= asset_path 'email-blue.svg' %>" alt="Share via Email"></a> -->
 		<label for="modal-1">
 	    <div class="email-share modal-trigger"><img src="<%= asset_path 'email-blue.svg' %>" alt="Share via Email"></div>
 	  </label>
@@ -41,20 +28,28 @@
 		<div class="walkthrough" data-0-center-bottom="opacity: 1;" data-0-top-bottom="opacity: 0;">
 			<div class="screens-wrapper">
 				<div class="screens" data-anchor-target=".walkthrough" data-0-bottom-top="bottom: -100vh;" data--10p-top-top="bottom: 10vh;" data-0-bottom-bottom="bottom: 10vh;" data-0-top-bottom="bottom: 100vh;">
-						<div class="screen fix is-transparent" data-anchor-target=".walkthrough-wrapper .fix-text" data-0-top-top="opacity: 1;" data-0-top-bottom="opacity: 0;"></div>
+						<div class="screen fix is-transparent" data-anchor-target=".walkthrough-wrapper .fix-text" data-0-top-top="opacity: 1;" data-0-top-bottom="opacity: 0;">
+							<img src="<%= asset_path 'fix-callout.png' %>" data-anchor-target=".walkthrough-wrapper .fix-text" data-0-top-top="opacity:1;" data-200-top-bottom="opacity: 0;">
+						</div>
 						<div class="screen match is-transparent" data-anchor-target=".walkthrough-wrapper .match-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
-						<div class="screen session is-transparent" data-anchor-target=".walkthrough-wrapper .session-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
-						<div class="screen solve is-transparent" data-anchor-target=".walkthrough-wrapper .solve-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
+						<div class="screen session is-transparent" data-anchor-target=".walkthrough-wrapper .session-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;">
+							<img src="<%= asset_path 'session-callout.png' %>" data-anchor-target=".walkthrough-wrapper .session-text" data-0-top-top="opacity:1;" data-200-top-bottom="opacity: 0;">
+						</div>
+						<div class="screen solve is-transparent" data-anchor-target=".walkthrough-wrapper .solve-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;">
+							<img src="<%= asset_path 'solve-callout.png' %>" data-anchor-target=".walkthrough-wrapper .solve-text" data-0-top-top="opacity:1;" data-200-top-bottom="opacity: 0;">
+						</div>
 						<div class="screen review is-transparent" data-anchor-target=".walkthrough-wrapper .review-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
-						<div class="screen tech is-transparent" data-anchor-target=".walkthrough-wrapper .tech-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;"></div>
+						<div class="screen tech is-transparent" data-anchor-target=".walkthrough-wrapper .tech-text" data-0-bottom-bottom="opacity: 0;" data-0-center-top="opacity: 1;">
+							<img src="<%= asset_path 'tech-callout.png' %>" data-anchor-target=".walkthrough-wrapper .tech-text" data-0-top-top="opacity:1;" data-200-top-bottom="opacity: 0;">
+						</div>
 						<div class="screen slides-wrapper">
 							<div class="slides">
-								<div class="active"><img src="<%= asset_path 'screen-1@2x.png' %>" alt=""></div>
-								<div><img src="<%= asset_path 'screen-2@2x.png' %>" alt=""></div>
-								<div><img src="<%= asset_path 'screen-3@2x.png' %>" alt=""></div>
-								<div><img src="<%= asset_path 'screen-4@2x.png' %>" alt=""></div>
-								<div><img src="<%= asset_path 'screen-5@2x.png' %>" alt=""></div>
-								<div><img src="<%= asset_path 'screen-6@2x.png' %>" alt=""></div>
+								<div class="active"><img src="<%= asset_path 'fix.jpg' %>" alt=""></div>
+								<div><img src="<%= asset_path 'match.jpg' %>" alt=""></div>
+								<div><img src="<%= asset_path 'session.jpg' %>" alt=""></div>
+								<div><img src="<%= asset_path 'solve.jpg' %>" alt=""></div>
+								<div><img src="<%= asset_path 'review.jpg' %>" alt=""></div>
+								<div><img src="<%= asset_path 'tech.jpg' %>" alt=""></div>
 							</div>
 						</div>
 				</div>
@@ -74,11 +69,11 @@
 				</div>
 				<div class="text-node match-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
 					<h2>We’ll match you with an available tech in real-time.</h2>
-					<p>Let us do the work for you while you sit back and relax. That means no more lugging your computer to a shop or searching for an IT guy.</p>
+					<p>Sit back and relax while we match you with the best tech available. No more lugging your computer across town, we offer help in minutes.</p>
 				</div>
 				<div class="text-node session-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
 					<h2>Once matched, you’ll begin a live session with a real tech.</h2>
-					<p>Our vetting process ensures that we connect you with the best experts to help you. See your tech’s occupation, location, completed jobs, and rating.</p>
+					<p>We take pride in our tech experts, we run through an in-depth vetting process to make sure we always have the best experts to solve your problems.</p>
 				</div>
 				<div class="text-node solve-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
 					<h2>Talk directly with your tech and get your issue solved.</h2>
@@ -86,7 +81,7 @@
 				</div>
 				<div class="text-node review-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
 					<h2>Shape a better community by reviewing your experience.</h2>
-					<p>Your reviews matter. We’ll remember your choices and take your feedback to improve the experience each time you use the app.</p>
+					<p>Your reviews matter. We will use the feedback you provide to constantly improve the experience of dakota.</p>
 				</div>
 				<div id="techs" class="text-node tech-text" data-0-bottom-bottom="opacity: 0;" data--20p-bottom-bottom="opacity: 1;" data-0p-top-top="opacity: 1;" data--10p-top-top="opacity: 0;">
 					<h2>Dakota is for techs too. Work when you want. Make money.</h2>
@@ -97,28 +92,47 @@
 	</div>
 </section>
 
-<section class="users">
-	<div class="inner">
-		<h2>Users</h2>
-		<img src="<%= asset_path 'user-icon.svg' %>" alt="User Computer">
-		<ul>
-			<li><strong>Always Available.</strong> 24/7.</li>
-			<li><strong>Save Money.</strong> Customers on Dakota save on average $100 over traditional computer support outlets.</li>
-			<li><strong>Easy.</strong> No appointments to schedule, no labor. Reduce headaches by getting your issue fixed in minutes.</li>
-		</ul>
-	</div>
+<section class="benefits-wrapper">
+	<section class="users">
+		<div class="inner">
+			<h2>Users</h2>
+			<img src="<%= asset_path 'user-icon.svg' %>" alt="User Computer">
+			<ul>
+				<li><strong>Always Available.</strong> 24/7.</li>
+				<li><strong>Save Money.</strong> Customers on Dakota save on average $100 over traditional computer support outlets.</li>
+				<li><strong>Easy.</strong> No appointments to schedule, no labor. Reduce headaches by getting your issue fixed in minutes.</li>
+			</ul>
+		</div>
+	</section>
+	<svg id="line" width="634px" height="87px" viewBox="0 0 634 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>LINE</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Marketing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="-2" sketch:type="MSArtboardGroup" transform="translate(-403.000000, -5236.000000)" stroke-width="5" stroke-dasharray="1,0,10,9">
+            <g id="BLOCK---7" sketch:type="MSLayerGroup" transform="translate(1.000000, 5022.000000)">
+                <g id="LINE" transform="translate(404.000000, 216.000000)" sketch:type="MSShapeGroup">
+                    <path data-start="20" data-duration="20" d="M295.636,20.215 C304.422347,16.339 313.402202,12.857 322.681422,10.001 C360.414112,-1.612 402.415335,-2.23 440.570325,8.267 C459.991579,13.611 478.312121,21.703 497.676461,27.206 C538.316306,38.756 590.855682,62.502 631.236,50.273" id="Stroke-1" stroke="#F7F7F7"></path>
+                    <path data-start="0" data-duration="20" d="M0.804,20.949 C28.5679323,64.999 148.401854,92.106 194.654283,79.17 C231.512676,68.861 261.716264,39.6 295.636,20.215" id="Stroke-2" stroke="#348AC0"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+	<section class="techs">
+		<div class="inner">
+			<h2>Techs</h2>
+			<img src="<%= asset_path 'tech-icon.svg' %>" alt="Tech Computer">
+			<ul>
+				<li><strong>Make Money.</strong> Get paid for your time. Invoice-free.</li>
+				<li><strong>On-Demand Work.</strong> Login to Dakota whenever you want, and we'll handle finding you the jobs.</li>
+				<li><strong>Beautiful Interface.</strong> Dakota makes accepting jobs easy, review a request in your dashboard, and click to accept.</li>
+			</ul>
+		</div>
+	</section>
 </section>
-<section class="techs">
-	<div class="inner">
-		<h2>Techs</h2>
-		<img src="<%= asset_path 'tech-icon.svg' %>" alt="Tech Computer">
-		<ul>
-			<li><strong>Make Money.</strong> Get paid for your time. Invoice-free.</li>
-			<li><strong>On-Demand Work.</strong> Login to Dakota whenever you want, and we'll handle finding you the jobs.</li>
-			<li><strong>Beautiful Interface.</strong> Dakota makes accepting jobs easy, review a request in your dashboard, and click to accept.</li>
-		</ul>
-	</div>
-</section>
+
 <section class="request">
 	<div class="inner">
 		<div class="request-wrapper">
@@ -147,3 +161,22 @@
 		</div>
 	</div>
 </section>
+
+<div class="modal">
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-1"></div>
+      <div class="modal-content">
+      	<h2>Share via Email</h2>
+      	<span class="share-email-flash"></span>
+      	<%= form_tag('/email', method: "post", id: "share-email", remote: "true") do -%>
+					<%= text_field(:send_email, :address, {id: "send-email", placeholder: "name@example.com"}) %>
+					<%= text_area(:send_email, :message, size: '50x5', placeholder: "An optional message..") %>
+					<%= submit_tag "Send", class: "send-email" %>
+				<% end %>
+				<button class="cancel-email">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

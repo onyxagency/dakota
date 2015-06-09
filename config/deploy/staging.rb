@@ -7,6 +7,7 @@
 set :application, 'dakota_staging'
 set :deploy_to, '/var/www/staging.getdakota.com'
 set :branch, 'master' #TODO: Change to staging branch when production exists.
+set :rails_env, 'staging'
 
 role :app, %w{deploy@104.237.153.238}
 role :web, %w{deploy@104.237.153.238}

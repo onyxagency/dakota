@@ -3,9 +3,33 @@
 		@include padding(unpack(60px 20px 70px));
 	}
 	section {
-		&.users {
-			.inner {
-				padding: 50px 20px 70px;
+		&.intro {
+			.header {
+				.inner {
+					.header-text {
+						h1 {
+							font-size: 36px;
+							line-height: 52px;
+							margin-top: 60px;
+						}
+					}
+				}
+			}
+		}
+		&.walkthrough-section {
+			.walkthrough-wrapper {
+				.walkthrough {
+					.text-wrapper {
+						margin: 30px auto 0;
+					}
+				}
+			}
+		}
+		&.benefits-wrapper {
+			.users {
+				.inner {
+					padding: 50px 20px 70px;
+				}
 			}
 		}
 	}

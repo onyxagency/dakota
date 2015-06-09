@@ -8,20 +8,25 @@
 	section {
 		&.intro {
 			.header {
-				height: 397px;
 				.inner {
-					padding: 55px 20px 70px;
-					h1 {
-						font-size: 42px;
-						line-height: 56px;
-						margin: 20px auto 0;
+					.header-text {
+						text-align: left;
+						width: 90%;
+						max-width: 1170px;
+						h1 {
+							font-size: 42px;
+							line-height: 56px;
+							margin: 80px 0 0;
+							max-width: 400px;
+						}
 					}
-				}
-			}
-			.app-img-wrapper {
-				margin-top: -110px;
-				.app-img {
-
+					a {
+						width: 90%;
+						max-width: 1170px;
+						img {
+							margin: 10px 0 0 50px;
+						}
+					}
 				}
 			}
 		}
@@ -41,13 +46,7 @@
 						.screens {
 							width: 55%;
 							padding-bottom: 42%;
-							background-image: asset-url('screen-1@2x.png');
-							background-size: cover;
-							background-repeat: no-repeat;
-							background-position: 50%;
 							position: fixed !important;
-							display: block;
-							-webkit-backface-visibility: hidden;
 						}
 					}
 					.text-wrapper {
@@ -57,6 +56,8 @@
 						position: relative;
 						vertical-align: middle;
 						padding-bottom: 50vh;
+						text-align: left;
+						margin: 0;
 						.text-node {
 							margin-top: 50vh;
 							position: relative;
@@ -69,11 +70,16 @@
 				}
 			}
 		}
-		&.users {
-			width: 50%;
-			float: left;
-			.inner {
-				padding: 100px 20px 120px;
+		&.benefits-wrapper {
+			.users {
+				width: 50%;
+				float: left;
+				.inner {
+					padding: 100px 20px 120px;
+				}
+			}
+			#line {
+				display: block;
 			}
 		}
 		&.request {

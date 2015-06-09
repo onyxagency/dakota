@@ -7,6 +7,7 @@
 set :application, 'dakota'
 set :deploy_to, '/var/www/getdakota.com'
 set :branch, 'master'
+set :rails_env, 'production'
 
 role :app, %w{deploy@104.237.153.238}
 role :web, %w{deploy@104.237.153.238}
