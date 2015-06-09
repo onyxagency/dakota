@@ -6,8 +6,8 @@ class Email < MailForm::Base
 		{
 			:subject => "Your friend found Dakota and immediately thought of you.",
 			:to => %("#{send_email}"),
-			:from => "noreply@getdakota.com",
-			:reply_to => "noreply@getdakota.com"
+			:from => "\"Dakota\" <noreply@getdakota.com>",
+			:reply_to => "\"Dakota\" <noreply@getdakota.com>"
 		}
 	end
 end
