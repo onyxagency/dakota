@@ -98,11 +98,17 @@ section {
 					}
 					h1 {
 						color: $title-color;
-						font-size: 24px;
+						font-size: 20px;
 						font-weight: 300;
-						line-height: 36px;
+						line-height: 30px;
 						margin: 40px auto 0;
 						max-width: 740px;
+						span {
+							font-size: 24px;
+							line-height: 36px;
+							display: block;
+							margin-bottom: 15px;
+						}
 					}
 				}
 				a {
@@ -323,56 +329,39 @@ section {
 			}
 		}
 	}
-	&.benefits-wrapper {
-		position: relative;
-		&:after {
-			content: "";
-			display: table;
-			clear: both;
+	&.users {
+		background: $alt-bg-color;
+		text-align: center;
+		h2 {
+			font-weight: 400;
+			margin-top: 0;
 		}
-		.users {
-			background: $alt-bg-color;
-			text-align: center;
-			h2 {
-				font-weight: 400;
-				margin-top: 0;
-			}
-			img {
-				width: 250px;
-				height: 250px;
-				margin: auto;
-			}
-			ul {
-				list-style-type: none;
-				margin: 40px auto 0;
-				max-width: 400px;
-				padding: 0;
-				text-align: left;
-				li {
-					background: asset-url('check-blue.svg') left 6px no-repeat;
-					padding-left: 28px;
-					margin-top: 20px;
-					font: 300 16px/24px $base-ff;
-				}
+		img {
+			width: 250px;
+			height: 250px;
+			margin: auto;
+		}
+		ul {
+			list-style-type: none;
+			margin: 40px auto 0;
+			max-width: 400px;
+			padding: 0;
+			text-align: left;
+			li {
+				background: asset-url('check-blue.svg') left 6px no-repeat;
+				padding-left: 28px;
+				margin-top: 20px;
+				font: 300 16px/24px $base-ff;
 			}
 		}
-		#line {
-			position: absolute;
-			top: 38%;
-			left: 50%;
-			@include transform(translate(-50%, -50%));
-			width: 43%;
-			z-index: 3;
-			display: none;
-		}
-		.techs {
-			@extend .users;
-			background: $dark-accent-bg-color;
-			color: $title-color;
-			ul {
-				li {
-					background: asset-url('check-white.svg') left 6px no-repeat;
-				}
+	}
+	&.techs {
+		@extend .users;
+		background: $dark-accent-bg-color;
+		color: $title-color;
+		ul {
+			li {
+				background: asset-url('check-white.svg') left 6px no-repeat;
 			}
 		}
 	}

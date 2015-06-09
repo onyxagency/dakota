@@ -1,4 +1,51 @@
-<div style="max-width: 600px; text-align: center; margin: 50px auto 100px;">
+<style>
+  .button {
+      border: 0;
+      border-radius: 3px;
+      display: block;
+      font: 15px/23px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      width: 100%;
+      max-width: 260px;
+      height: 53px;
+      line-height: 53px;
+      text-align: center;
+      text-decoration: none;
+      margin: auto;
+      background: #3b94cc;
+      color: white;
+  }
+</style>
+
+<div style="max-width: 600px; text-align: center; margin: 40px auto 100px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">
+  
+  <a href="http://getdakota.com"><img src="http://localhost:3000/assets/dakota-logo.jpg" style="width: 80px;"></a>
+
+  <h4 style="margin: 30px 0 0; font-size: 18px; font-weight: 400; line-height: 27px;">Your friend found Dakota and immediately thought of you.</h4>
+
+  <hr style="width: 80px; border: 0; border-bottom: 1px solid #e5e5e5; margin-top: 20px; margin-bottom: 35px;">
+  <% @resource.mail_form_attributes.each do |attribute, value|
+    next if value.blank? %>
+    
+    <% if attribute == 'message' %>
+      <p style="font-style: italic; line-height: 24px;">&quot;<%= value %>&quot;</p>
+    <% end %>
+  
+  <% end %>
+
+  <p style="max-width: 500px; margin: 40px auto 20px; line-height: 24px; font-weight: 500;">Dakota is tech support, evolved. We immediately connect you with tech professionals for real-time support.</p>
+
+  <img src="http://localhost:3000/assets/fix.jpg" style="width: 600px; margin: 0 0 35px;">
+
+  <a href="http://getdakota.com" class="button">Learn More</a>
+
+</div>
+
+
+<!-- <div style="max-width: 600px; text-align: center; margin: 50px auto 100px;">
+  
+  <img src="http://localhost:3000/assets/dakota-logo.jpg" style="width: 80px;">
+
+  <h4>Your friend found Dakota and thought you would like it.</h4>
 
   <% @resource.mail_form_attributes.each do |attribute, value|
     next if value.blank? %>
@@ -10,8 +57,12 @@
   <% end %>
   
   <br /><br />
-  <img src="http://localhost:3000/assets/dakota-logo.jpg" style="width: 80px;">
+  
   <p>Dakota is an app that connects people with tech professionals for real-time support.</p>
+
+  <img src="http://localhost:3000/assets/fix.jpg" style="width: 600px;">
+
+  <a href="http://getdakota.com">Learn More</a>
 
 </div>
 
@@ -35,4 +86,4 @@
     <%= value.include?("\n") ? simple_format(value) : value %></p>
   <% end %>
   <br />
-<% end %>
+<% end %> -->

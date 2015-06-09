@@ -19,8 +19,6 @@ function init() {
 
 	}
 
-	var line = new Vivus('line', {type: 'scenario', start: 'inViewport', forceRender: false});
-
 	$('.header a').on('click', function(){
 		var textHeight = $('.fix-text').outerHeight();
 		if (winW < 1024 || Modernizr.touch) {
@@ -89,7 +87,7 @@ function socialSetup() {
 		e.preventDefault();
 		FB.ui({
 		  method: 'share',
-		  href: 'http://onyxla.co/thoughts/why-i-left', //TODO: change to getdakota.com and add open graph tags
+		  href: 'http://getdakota.com',
 		}, function(response){});
 	});
 

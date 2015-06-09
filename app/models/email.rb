@@ -4,7 +4,7 @@ class Email < MailForm::Base
 
 	def headers
 		{
-			:subject => "Someone has shared Dakota with you",
+			:subject => "Your friend found Dakota and immediately thought of you.",
 			:to => %("#{send_email}"),
 			:from => "noreply@getdakota.com",
 			:reply_to => "noreply@getdakota.com"

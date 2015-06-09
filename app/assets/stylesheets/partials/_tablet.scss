@@ -14,10 +14,14 @@
 						width: 90%;
 						max-width: 1170px;
 						h1 {
-							font-size: 42px;
-							line-height: 56px;
+							font-size: 26px;
+							line-height: 39px;
 							margin: 80px 0 0;
 							max-width: 400px;
+							span {
+								font-size: 42px;
+								line-height: 56px;
+							}
 						}
 					}
 					a {
@@ -70,16 +74,11 @@
 				}
 			}
 		}
-		&.benefits-wrapper {
-			.users {
-				width: 50%;
-				float: left;
-				.inner {
-					padding: 100px 20px 120px;
-				}
-			}
-			#line {
-				display: block;
+		&.users {
+			width: 50%;
+			float: left;
+			.inner {
+				padding: 100px 20px 120px;
 			}
 		}
 		&.request {
@@ -87,7 +86,7 @@
 			min-height: 600px;
 			.inner {
 				padding: 0;
-				width: 360px;
+				width: 440px;
 				position: absolute;
 				top: 50%;
 				left: 50%;

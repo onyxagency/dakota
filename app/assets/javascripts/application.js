@@ -15,5 +15,4 @@
 //= require turbolinks
 //= require modernizr.min.js
 //= require skrollr.min.js
-//= require vivus.min.js
 //= require_tree .

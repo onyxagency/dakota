@@ -3,7 +3,7 @@
 		<div class="inner">
 			<div class="header-text">
 				<img src="<%= asset_path 'dakota-logo.svg' %>" alt="Dakota">
-				<h1>An app that seamlessly connects people with tech professionals for real-time support.</h1>
+				<h1><span>Tech Support. Evolved.</span>Dakota connects you with tech professionals for real-time support.</h1>
 			</div>
 			<a href="#">See How It Works <img src="<%= asset_path 'down-arrow.svg' %>"></a>
 		</div>
@@ -92,51 +92,33 @@
 	</div>
 </section>
 
-<section class="benefits-wrapper">
-	<section class="users">
-		<div class="inner">
-			<h2>Users</h2>
-			<img src="<%= asset_path 'user-icon.svg' %>" alt="User Computer">
-			<ul>
-				<li><strong>Always Available.</strong> 24/7.</li>
-				<li><strong>Save Money.</strong> Customers on Dakota save on average $100 over traditional computer support outlets.</li>
-				<li><strong>Easy.</strong> No appointments to schedule, no labor. Reduce headaches by getting your issue fixed in minutes.</li>
-			</ul>
-		</div>
-	</section>
-	<svg id="line" width="634px" height="87px" viewBox="0 0 634 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
-    <title>LINE</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Marketing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="-2" sketch:type="MSArtboardGroup" transform="translate(-403.000000, -5236.000000)" stroke-width="5" stroke-dasharray="1,0,10,9">
-            <g id="BLOCK---7" sketch:type="MSLayerGroup" transform="translate(1.000000, 5022.000000)">
-                <g id="LINE" transform="translate(404.000000, 216.000000)" sketch:type="MSShapeGroup">
-                    <path data-start="20" data-duration="20" d="M295.636,20.215 C304.422347,16.339 313.402202,12.857 322.681422,10.001 C360.414112,-1.612 402.415335,-2.23 440.570325,8.267 C459.991579,13.611 478.312121,21.703 497.676461,27.206 C538.316306,38.756 590.855682,62.502 631.236,50.273" id="Stroke-1" stroke="#F7F7F7"></path>
-                    <path data-start="0" data-duration="20" d="M0.804,20.949 C28.5679323,64.999 148.401854,92.106 194.654283,79.17 C231.512676,68.861 261.716264,39.6 295.636,20.215" id="Stroke-2" stroke="#348AC0"></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
-	<section class="techs">
-		<div class="inner">
-			<h2>Techs</h2>
-			<img src="<%= asset_path 'tech-icon.svg' %>" alt="Tech Computer">
-			<ul>
-				<li><strong>Make Money.</strong> Get paid for your time. Invoice-free.</li>
-				<li><strong>On-Demand Work.</strong> Login to Dakota whenever you want, and we'll handle finding you the jobs.</li>
-				<li><strong>Beautiful Interface.</strong> Dakota makes accepting jobs easy, review a request in your dashboard, and click to accept.</li>
-			</ul>
-		</div>
-	</section>
+<section class="users">
+	<div class="inner">
+		<h2>Users</h2>
+		<img src="<%= asset_path 'user-icon.svg' %>" alt="User Computer">
+		<ul>
+			<li><strong>Always Available.</strong> 24/7.</li>
+			<li><strong>Save Money.</strong> Customers on Dakota save on average $100 over traditional computer support outlets.</li>
+			<li><strong>Easy.</strong> No appointments to schedule, no labor. Reduce headaches by getting your issue fixed in minutes.</li>
+		</ul>
+	</div>
+</section>
+<section class="techs">
+	<div class="inner">
+		<h2>Techs</h2>
+		<img src="<%= asset_path 'tech-icon.svg' %>" alt="Tech Computer">
+		<ul>
+			<li><strong>Make Money.</strong> Get paid for your time. Invoice-free.</li>
+			<li><strong>On-Demand Work.</strong> Login to Dakota whenever you want, and we'll handle finding you the jobs.</li>
+			<li><strong>Beautiful Interface.</strong> Dakota makes accepting jobs easy, review a request in your dashboard, and click to accept.</li>
+		</ul>
+	</div>
 </section>
 
 <section class="request">
 	<div class="inner">
 		<div class="request-wrapper">
-			<h2>Get early access to Dakota.</h2>
+			<h2>Be the first to know when Dakota is ready.</h2>
 			<p><span><%= @member_count %></span> people have signed up.</p>
 			<span class="error">error</span>
 			<%= form_tag('/subscribe', method: "post", id: "subscribe", remote: "true") do -%>
