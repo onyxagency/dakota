@@ -14,6 +14,10 @@
       background: #3b94cc;
       color: white;
   }
+  .link {
+    color: #3b94cc;
+    text-decoration: none;
+  }
 </style>
 
 <div style="max-width: 600px; text-align: center; margin: 40px auto 100px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">
@@ -27,16 +31,16 @@
     next if value.blank? %>
     
     <% if attribute == 'message' %>
-      <p style="font-style: italic; line-height: 24px;">&quot;<%= value %>&quot;</p>
+      <p style="font-style: italic; line-height: 24px;">&quot;<%= value %>&quot; <span style="font-style: normal;">&#45; Your friend.</span></p>
     <% end %>
   
   <% end %>
 
-  <p style="max-width: 500px; margin: 40px auto 20px; line-height: 24px; font-weight: 500;">Dakota is tech support, evolved. We immediately connect you with tech professionals for real-time support.</p>
+  <p style="max-width: 600px; margin: 40px auto 20px; line-height: 27px; font-size: 18px;"><a class="link" href="http://twitter.com/usedakota">@usedakota</a> is rethinking tech support. See how at <a class="link" href="http://getdakota.com">getdakota.com</a></p>
 
   <img src="http://localhost:3000/assets/fix.jpg" style="width: 600px; margin: 0 0 35px;">
 
-  <a href="http://getdakota.com" class="button">Learn More</a>
+  <a href="http://getdakota.com" class="button">Check it out</a>
 
 </div>
 

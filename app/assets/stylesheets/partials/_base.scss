@@ -520,10 +520,12 @@ section {
     	margin: auto;
     	h2 {
     		text-align: center;
-    		margin-bottom: 10px;
+    		margin-bottom: 5px;
     	}
     	.share-email-flash {
     		font-size: 14px;
+    		line-height: 21px;
+    		margin-bottom: 5px;
     		color: $error-color;
     		text-align: center;
     		display: block;
