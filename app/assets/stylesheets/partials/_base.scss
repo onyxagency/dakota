@@ -157,6 +157,11 @@ section {
 			position: absolute;
 			right: 6%;
 			top: 0;
+			a.contact-email {
+				color: $link-color;
+				font-weight: 300;
+				margin-right: 30px;
+			}
 			span {
 				vertical-align: middle;
 				margin-bottom: 0.05em;
